@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        td{
+            width:100px;
+            font-size:12px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //为文本框注册一个键盘按下后弹起的事件
+            this.document.getElementById('txt').onkeyup = function () {
+                var tds = document.getElementById('tb').getElementsByTagName('td');
+                for (var i = 0; i < tds.length; i++) {
+                    tds[i].style.backgroundColor = '';
+                }
+                var pwd = this.value;
+                if (pwd.length > 0) {
+                    //根据用户输入的密码，校验密码强度
+                    var pwdlevel = getPasswordLevel(pwd);
+                    var tds = document.getElementById('tb').getElementsByTagName('td');
+                    switch (pwdlevel) {
+                        case 0:
+                        case 1:
+                        case 2:
+                            //弱
+                            tds[0].style.backgroundColor = 'red';
+                            break
+                        case 3:
+                        case 4:
+                            //中
+                            tds[0].style.backgroundColor = 'orange';
+                            tds[1].style.backgroundColor = 'orange';
+                            break;
+                        case 5:
+                            //强
+                            tds[0].style.backgroundColor = 'green';
+                            tds[1].style.backgroundColor = 'green';
+                            tds[2].style.backgroundColor = 'green';
+                            break;
+                    }
+
+                }
+               
+            }
+        }
+        function getPasswordLevel(user_pwd) {
+            var lvl = 0;
+            //如果密码中包含数字，强度加1
+            if (user_pwd.match(/\d+/)) { lvl++;}
+            //如果密码中包含小写字母，强度加1
+            if (user_pwd.match(/[a-z]+/)) { lvl++; }
+            //如果密码中包含大写字母，强度加1
+            if (user_pwd.match(/[A-Z]+/)) { lvl++; }
+            //如果密码中包含特殊字符，强度加1
+            if (user_pwd.match(/[^0-9a-zA-Z]+/)) { lvl++; }
+            //如果密码长度大于6位，强度加1
+            if (user_pwd.length > 6) { lvl++; }
+            return lvl;
+        }
+    </script>
+</head>
+<body>
+    请输入密码：<input type="text" id="txt" value="" />
+    <table border="0" cellpadding="0" cellspacing="0" id="tb">
+        <tr>
+            <td align="center">弱</td>
+            <td align="center">中</td>
+            <td align="center">强</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#dv1 li').mouseover(function () {
+                $(this).css('backgroundColor', 'red').siblings('li').css('backgroundColor','');
+            }).click(function () {
+                $(this).prevAll().css('backgroundColor', 'yellow').end().nextAll().css('backgroundColor', 'blue');//prevall（）返回的就不是this对象了，链就被破坏了，需要用end 恢复链
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="dv1">
+        <ul>
+            <li>火箭</li>
+            <li>公牛</li>
+            <li>凯尔特人</li>
+            <li>开拓者</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!--dom转jQuery对象
+$(dom)
+dom=$(dom)[0]    or  dom=$(dom).get(0)
+
+选择器
+1.id选择器
+$('#id')
+
+2.标签选择器
+$('p')
+
+3.类选择器
+$('.cls')
+
+4.标签+类选择器
+$('dv.cls')
+
+5.组合选择器
+$（'dv','p','span'）
+
+6.层选择器
+
+6.1后代元素选择器  使用 空格 隔开
+$('div p')表示层div下面的所有p  包含后代  子  子的子代
+
+6.2子元素选择器  使用 > 隔开
+$('div > p')  必须是div下的直接子元素p
+
+6.3相邻元素选择器
+
+$('div + p')  表示div元素的后一个兄弟元素，并且元素必须是p
+等同于  $('div').next('p')
+        $('div + *')等于$('div').next()
+
+$('div ~ p')  表示div元素的后面所兄弟p元素
+等同于$('div').nextAll('p')
+      $('div ~ *')等于 $('div').nextAll()
+
+$('div').prev()  表示div元素的上一个兄弟元素
+$('div').prevAll()表示div元素的上面的所有兄弟元素
+$('div').siblings() 表示出自己之外的所有兄弟元素
+ 
+ 7.属性过滤选择器
+   $('input[type=text]')选择页面上所有的type是text的input标签
+    -->

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var userName = '王丽';
+        function showName(x,y,z) {
+            alert(this.userName);
+            alert(x+y+z);
+          
+        }
+        showName();
+
+        //function person() {           //函数赋值给新对象
+        //    this.userName = '佟丽娅';
+        //}
+        //var p = new person();
+        //p.show = showName;
+        //p.show();
+
+        var p = { userName: '佟丽娅' }
+        showName.apply(p);//把函数原来的对象window替换成p，相当于调用p.userName
+        showName.apply(p, [10, 20, 50]);
+
+        showName.call(p, 10, 20, 50);//apply调用的时候用数组输入参数，call使用单个参数输入
+
+
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

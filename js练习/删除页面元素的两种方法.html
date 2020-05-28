@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #dv1, #dv2 {
+        width:450px;
+        height:150px;
+        border:1px solid blue;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            this.document.getElementById('btn1').onclick = function () {
+                var dv1 = document.getElementById('dv1');
+                while (dv1.firstChild) {
+                    dv1.removeChild(dv1.firstChild);//第一种删除方法使用  removeChild方法
+                }
+            }
+
+            this.document.getElementById('btn2').onclick = function () {
+                var dv2 = document.getElementById('dv2');
+                dv2.innerHTML = '';//第二种删除方法给节点赋值   innerHTML=''  这种方式不能删除层中元素对应的函数
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="dv1">
+        <input type="text" />
+        <input type="button" />
+        <input type="checkbox" />
+        <input type="email" />
+    </div>   <input type="button" id="btn1" value="删除div1元素" />
+    <div id="dv2">
+        <input type="text" />
+        <input type="button" />
+        <input type="checkbox" />
+        <input type="email" />
+    </div><input type="button" id="btn2" value="删除div2元素" />
+</body>
+</html>

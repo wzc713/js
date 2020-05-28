@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <style>
+        td {
+            width:50px;
+            height:50px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $('#table1 tr:first').css('fontSize', '58px');
+                $('#table1 tr:last').css('color', 'red');
+                $('#table1 tr:gt(0):lt(3)').css('fontSize', '36px');//行索引大于0过滤后再过滤前三个行
+                $('#table1 tr:odd:not(:last)').css('backgroundColor', 'red');//奇数行变成红色
+            });
+            $('#tb2 tr').mouseover(function () {
+                $(this).css('backgroundColor', 'yellow').siblings('tr').css('backgroundColor', 'white');
+       
+            });
+
+            $('#tb3 tr').click(function () {
+                $('td').css('backgroundColor', '');
+                $('td:even', this).css('backgroundColor', 'blue');//选择当前行的偶数td标签
+                $('td:odd', this).css('backgroundColor', 'red');
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" name="name" value="表格应用样式" />
+    <table id="table1" border="1" align="left">
+        <tr>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+        <tr>
+            <td>tom</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>jimi</td>
+            <td>99</td>
+        </tr>
+        <tr>
+            <td>lele</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>qiqi</td>
+            <td>97</td>
+        </tr>
+        <tr>
+            <td>maomao</td>
+            <td>97</td>
+        </tr>
+        <tr>
+            <td>xiaoping</td>
+            <td>97</td>
+        </tr>
+        <tr>
+            <td>平均分</td>
+            <td>98</td>
+        </tr>
+    </table>
+    <div style="text-align:center"><input type="button" id="btn2" name="name" value="应用样式" /></div>
+
+    <table id="tb2" border="1" align="center">
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+    </table>
+   <br />
+
+    <table id="tb3" border="1" align="center">
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+    </table>
+</body>
+</html>
+<!--:first  $('div:first')  选取第一个div
+:last   $('div:last')  选取最后一个div
+:eq()   $('p:eq(5)')  选择第五个p标签
+:lt()   $('p:lt(5)')  选择索引小于5的p标签
+:gt()   $('p:gt(5)')  选择索引大于5的p标签
+:not    $('p:not(.cls)') 选择p标签中没有应用.cls类样式的标签
+:even   $('p:even')    选择索引是偶数的p标签
+:odd    $('p:odd')    选择索引是奇数的p标签
+:header $(':header')  选择h1-h6的标签
+:animated  $('div:animated')  选取正在执行动画的div元素-->

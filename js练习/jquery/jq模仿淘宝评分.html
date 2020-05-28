@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {//为每个td注册一个mouseover事件
+            $('#tb1 td').mouseover(function () {
+                $(this).text('★').prevAll().text('★');
+            }).mouseout(function () {    //注册鼠标离开事件，把所有的td都变成☆，把具有isclicked属性的td及之前的td变成★
+                $('#tb1 td').text('☆');//或者写$(this).text('☆').siblings('td').text('☆')
+                $('#tb1 td[isclicked=isclicked]').text('★').prevAll().text('★');
+            }).click(function () {
+                $(this).attr('isclicked', 'isclicked').siblings().removeAttr('isclicked').end().nextAll().text('☆');//等价于setAttribute（）
+                $('#score').text($(this).attr('score'));
+            }).attr('score', function () {    //attr的内部迭代，会将函数每个返回值设置到每个元素上
+                return ($(this).prevAll().length + 1) * 10;
+            });
+               // .attr('score', function (index) {
+            //    return (index + 1) * 10;
+            //})
+        })
+
+    </script>
+</head>
+<body>
+    <table id="tb1">
+        <tbody>
+            <tr>
+                <td style="font-size:50px;color:blue">☆</td>
+                <td style="font-size:50px;color:blue">☆</td>
+                <td style="font-size:50px;color:blue">☆</td>
+                <td style="font-size:50px;color:blue">☆</td>
+                <td style="font-size:50px;color:blue">☆</td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="score"></p>
+
+</body>
+</html>

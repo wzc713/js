@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var inputs = this.document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == 'text') {
+                    inputs[i].onblur = function () {//输入框离开焦点如果为空背景变成红色，提醒用户未输入信息
+                        if (this.value.length == 0) {
+                            this.style.backgroundColor = 'red';
+                        } else {
+                            this.style.backgroundColor = 'white';
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input /><input /><input /><input /><input /><input />
+</body>
+</html>

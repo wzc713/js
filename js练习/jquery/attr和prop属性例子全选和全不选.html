@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn1').click(function () {
+                //一般对原生属性的访问用prop，自己添加的自定义属性用attr来访问，prop返回的是经过计算的值，比如true和false，attr返回的是原始值，比如checked  undefined；
+                //$('input[type=checkbox]').attr('checked', true);
+                $('input[type=checkbox]').prop('checked', true );
+
+            });
+            $('#btn2').click(function () {
+
+                $('input[type=checkbox]').prop('checked', false);
+            });
+            $('#btn3').click(function () {
+                $('input[type=checkbox]').prop('checked', function (k,v) {
+                    return !v;
+                })
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="name" value="" />
+    <input type="checkbox" name="name" value="" />
+    <input type="checkbox" name="name" value="" />
+    <input type="checkbox" name="name" value="" />
+    <input type="checkbox" name="name" value="" /><br />
+    <input type="button" id="btn1" name="name" value="全选" />
+    <input type="button" id="btn2" name="name" value="全不选" />
+    <input type="button" id="btn3" name="name" value="反选" />
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #pmsg{
+            width:1000px;
+            height:20px;
+            border:1px solid blue;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var checks = this.document.getElementById('dv').getElementsByTagName('input');
+            
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].onclick = function () {
+                    var chk = [];
+                    for (var c = 0; c < checks.length; c++) {
+                        if (checks[c].checked) {
+                            chk[chk.length] = checks[c].value;
+                        }
+                    }
+                    document.getElementById('pmsg').innerHTML = '共选中了' + chk.length + '项，分别是：'+chk.toString();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="dv">
+        <input type="checkbox" value="tom" />tom
+        <input type="checkbox" value="jerry" />jerry
+        <input type="checkbox" value="lilei" />lilei
+        <input type="checkbox" value="hanmeimei" />hanmeimei
+    </div>
+    <p id="pmsg">共选中了0项，分别是：</p>
+</body>
+</html>

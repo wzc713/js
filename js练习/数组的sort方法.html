@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //数组冒泡排序
+        function fnSortAsc(arrayObject) {
+            var temp, i, j;
+            for (i = 0; i < arrayObject.length - 1; i++) {
+                for (j = arrayObject.length - 1; j > i; j--) {
+                    if (arrayObject[j] < arrayObject[j - 1]) {
+                        temp = arrayObject[j];
+                        arrayObject[j] = arrayObject[j - 1];
+                        arrayObject[j - 1] = temp;
+                    }
+                }
+            }
+        }
+        var arrayData = [2, 10, 10, 28, 18, 16];
+        var arraystr=['zhangfei','guanyu','zhaoyun','machao','huangzhong']
+        fnSortAsc(arrayData);
+        alert(arrayData);
+        arrayData.sort(function (x, y) { return y - x; });//给sort传一个匿名函数，用来规定排序规则
+        alert(arrayData);
+        arraystr.sort(function (x, y) { return y.length - x.length });//按照字符串的长度排序
+        alert(arraystr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

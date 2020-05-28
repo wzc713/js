@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var arryint = [10, 20, 30, 40, 50, 60];
+            var arryintnew = $.map(arryint, function (value, key) {
+                return value * 10;
+              
+            });
+            alert(arryintnew);
+            alert(typeof (arryintnew));
+        })
+
+
+        $(function () {
+            var dict = { 'name': 'zhangjie', 'age': 10 };
+            var dictnew = $.map(dict, function (value, key) {
+                return  key+':'+value ;
+            });
+            alert(dictnew);
+            alert(typeof (dictnew));
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

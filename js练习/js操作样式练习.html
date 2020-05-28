@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //超链接单选效果
+        window.onload = function () {
+            //获取所有A标签
+            var alinks = this.document.getElementsByTagName('a');
+            //为每个A标签设置函数
+            for (var i = 0; i < alinks.length; i++) {
+                alinks[i].onclick = function () {
+                    for (var c = 0; c < alinks.length; c++) {
+                        alinks[c].style.backgroundColor = 'white';
+                    }
+                    this.style.backgroundColor = 'red';
+                    return false;
+                }
+            }
+            //表格按照奇偶行改变颜色
+            var btn = this.document.getElementById('btn1');
+            btn.onclick = function () {
+                var trs = document.getElementById('tb1').getElementsByTagName('tr');
+                for (var i = 0; i < trs.length; i++) {
+                    if (i % 2 == 0) {
+                        trs[i].style.backgroundColor = 'yellow';
+                    } else {
+                        trs[i].style.backgroundColor = 'red';
+                    }
+                }
+            }
+
+            //文本框获得焦点的时候背景色改变
+            var txts = this.document.getElementsByTagName('input');
+            for (var i = 0; i < txts.length; i++) {
+                if (txts[i].type == 'text') {
+                    txts[i].onfocus = function () {
+                       
+                        this.style.backgroundColor = 'yellow';
+                        
+                    }
+                    txts[i].onblur = function () {
+                        this.style.backgroundColor = 'white';
+                    }
+                }
+            }
+
+            //表格2点击行，行背景颜色变化
+            var trs2 = this.document.getElementById('tb2').getElementsByTagName('tr');
+            for (var i = 0; i < trs2.length; i++) {
+                trs2[i].onclick = function () {
+                    for (var c = 0; c < trs2.length; c++) {
+                        trs2[c].style.backgroundColor = 'white';
+                    }
+                    this.style.backgroundColor = 'purple';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>      <a href="http://www.baidu.com">百度</a>      <a href="http://www.baidu.com">百度</a>     <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>      <a href="http://www.baidu.com">百度</a>      <a href="http://www.baidu.com">百度</a>     <a href="http://www.baidu.com">百度</a>
+    <input type="button" id="btn1" value="表格颜色奇偶行变色" />
+    <table id="tb1" border="1" cellpadding="2" cellspacing="2">
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+    </table>
+    <input /><input /><input /><input /><input /><input /><input /><input /><input /><input /><input />
+    <table id="tb2" border="1" cellpadding="2" cellspacing="2">
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+    </table>
+</body>
+</html>

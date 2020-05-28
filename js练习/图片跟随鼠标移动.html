@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        img{
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            this.document.onmousemove = function (evt) {
+                var e = window.event || evt;//兼容了ie和fr浏览器
+                var x = e.clientX-60;//图片的偏移量，使鼠标位于图片的中间
+                var y = e.clientY-50;
+                document.getElementById('imgx').style.left = x+'px';
+                document.getElementById('imgx').style.top = y+'px';
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="imgx" src="img/timg.jpg" />
+</body>
+</html>
