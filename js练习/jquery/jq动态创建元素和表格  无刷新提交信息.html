@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script>
+        var website = {
+            'baidu': 'http://www.baidu.com',
+            'wangyi': 'http://www.163.com',
+            'xinlang': 'http://www.sina.com'
+           
+        };
+        $(function () {
+            $('#btn1').click(function () {
+                var tb1=$('<table border="1"></table>').appendTo('body');
+                for (var key in website) {
+                    $('<tr><td>' + key + '</td><td><a href="' + website[key] + '">'
+                        + key + '</a></td></tr>').appendTo(tb1);
+                }
+            });
+
+            $('#btn2').click(function () {
+                var uname = $('#uname').val();
+                var txtcontent = $('#txcontent').val();
+                $('<tr><td>' + uname + '</td><td>' + txtcontent + '</td></tr>').appendTo('#tb2');
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="生成表格" id="btn1" />
+    <table border="1" id="tb2">
+        <tr>
+            <td>234</td>
+            <td>dfsdf</td>
+        </tr>
+        <tr>
+            <td>2434</td>
+            <td>55dsfsd</td>
+        </tr>
+    </table>
+    名称：<input type="text" id="uname" name="name" value="" /><br />
+    评论：<textarea cols="25" rows="5" id="txcontent"></textarea>
+       <input type="button" id="btn2" name="name" value="提交" />
+   
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $(':text').blur(function () {
+                if ($(this).val().length == 0) {
+                    $(this).css('backgroundColor', 'red');
+                } else {
+                    $(this).css('backgroundColor', '');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" name="name" value="" />
+    <input type="text" name="name" value="" />
+    <input type="text" name="name" value="" />
+    <input type="text" name="name" value="" />
+</body>
+</html>

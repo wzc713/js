@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #dv1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+        }
+
+        select {
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            //清空
+            $('#btnEmpty').click(function () {
+                $('#dv1').empty();
+            });
+            //删除
+            $('#btnRemove').click(function () {
+                $('#dv1').remove();
+            });
+
+            $(':button[value=">>"]').click(function () {
+                $('#s1 option').appendTo('#s2');
+            });
+            $(':button[value=">"]').click(function () {
+                $('#s1 option:selected').appendTo('#s2');
+            });
+            $(':button[value="<"]').click(function () {
+                $('#s2 option:selected').appendTo('#s1');
+            });
+            $(':button[value="<<"]').click(function () {
+                $('#s2 option').appendTo('#s1');
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="btnEmpty" name="name" value="清空" />
+    <input type="button" id="btnRemove" name="name" value="删除" />
+    <br />
+    <div id="dv1">
+        sdkfljslkdjfslkjdf
+        <p>skfjljfdlkfj</p>
+        <a href="#">neirong</a>
+        <ul>
+            <li>aklsdkfj</li>
+            <li>sfjskljdf</li>
+            <li>skldjflskjf</li>
+        </ul>
+    </div>
+    <div style="text-align:center;width:auto">
+        <div style="width:150px;float:left">
+            <select multiple="multiple" id="s1">
+                <option value="value">增加</option>
+                <option value="value">删除</option>
+                <option value="value">修改</option>
+                <option value="value">保存</option>
+            </select>
+        </div>
+
+        <div style="width:150px;float:left">
+            <input type="button" name="name" value=">>" /><br />
+            <input type="button" name="name" value=">" /><br />
+            <input type="button" name="name" value="<" /><br />
+            <input type="button" name="name" value="<<" />
+
+        </div>
+        <div style="width:150px;float:left">
+            <select multiple="multiple" id="s2">
+            </select>
+        </div>
+    </div>
+</body>
+</html>
