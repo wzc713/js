@@ -84,7 +84,9 @@
     <Content Include="jquery\jquery遍历.html" />
     <Content Include="jquery\script\选择器，过滤器，属性过滤器，表单过滤器.js" />
     <Content Include="jquery\ul节点互相转移.html" />
+    <Content Include="jquery\单选复选的批量赋值问题.html" />
     <Content Include="jquery\文本框失去焦点校验是否为空.html" />
+    <Content Include="jquery\节点的替换和包裹.html" />
     <Content Include="js操作样式.html" />
     <Content Include="js操作样式练习.html" />
     <Content Include="Web.config" />
@@ -111,7 +113,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="jquery\jq事件动画插件\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

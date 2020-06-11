@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            //先使用选择器选择到对应的元素，然后使用指定的元素替换
+            $('#btn1').click(function () {
+                $('p').replaceWith('<a href="#">百度</a>');
+            });
+            //先创建一个元素，然后替换选择器选择到的元素
+            $('#btn2').click(function () {
+              $('<font color="red">============================</font>').replaceAll('hr');
+            });
+
+            $('#btn3').click(function () {
+                //$('p').wrap('<font color="red"></font>');//在外面包裹P标签
+                //$('p').wrapInner('<font color="red"></font>');//在里面包裹P标签
+                $('p').wrapAll('<font color="red"></font>');//用一个标签包括所有的P
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" name="name" value="replaceWith" />
+    <input type="button" id="btn2" name="name" value="replaceAll" />
+    <br />
+    <input type="button" id="btn3" name="name" value="包裹 内包裹  全部包裹" />
+    <p>1111111111111111111111111111</p>
+    <hr />
+    <p>1111111111111111111111111111</p>
+    <hr />
+    <p>1111111111111111111111111111</p>
+    <hr />
+    <p>1111111111111111111111111111</p>
+    <hr />
+    <p>1111111111111111111111111111</p>
+    <hr />
+    <p>1111111111111111111111111111</p>
+    <hr />
+</body>
+</html>

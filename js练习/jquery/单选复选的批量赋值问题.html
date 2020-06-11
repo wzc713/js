@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $(':radio').val(['male', 'weihun']);//选中数组中所有的单选值，只要一个值也要写成数组
+                $(':checkbox').val(['basketball', 'pingpang','football']);//选中数组中的所有值
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" name="name" value="单选复选批量赋值" />
+    <p>
+        <input type="radio" name="gender" value="male" />男
+        <input type="radio" name="gender" value="female" />女
+    </p>
+    <p>
+        <input type="radio" name="hf" value="yihun" />已婚
+        <input type="radio" name="hf" value="weihun" />未婚
+    </p>
+    <p>
+        <input type="checkbox" name="hobby" value="basketball" />篮球
+        <input type="checkbox" name="hobby" value="football" />足球
+        <input type="checkbox" name="hobby" value="pingpang" />乒乓球
+    </p>
+</body>
+</html>
