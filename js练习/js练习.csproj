@@ -72,6 +72,7 @@
     <Content Include="jquery\attr和prop属性例子全选和全不选.html" />
     <Content Include="jquery\jquery1.html" />
     <Content Include="jquery\jquery选择器.html" />
+    <Content Include="jquery\jq事件动画插件\点击弹出层提示.html" />
     <Content Include="jquery\jq删除节点 select相互移动.html" />
     <Content Include="jquery\jq加法计算器  5秒阅读协议.html" />
     <Content Include="jquery\jq动态创建元素和表格  无刷新提交信息.html" />
@@ -113,9 +114,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="jquery\jq事件动画插件\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
