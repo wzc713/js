@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#dv1').mousemove(function (evt) {
+                var x = evt.pageX;
+                var y = evt.pageY;
+                $('#txt').val('鼠标坐标：' + x + ',' + y);
+            }).mouseout(function () {
+                $('#txt').val('鼠标坐标：0,0');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="dv1" style="text-align:center; border:1px solid blue;background-color:red;width:50%;height:280px">
+        <input type="text" id="txt" name="name" value="鼠标坐标：0,0" style="font-size:18px;margin-top:50px;background-color:red;border:none" />
+    </div>
+</body>
+</html>
