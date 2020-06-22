@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        div {
+        width:66%;
+        height:300px;
+        border:1px solid blue;
+        background-color:skyblue;
+        
+        }
+        input {
+        margin-left:10px;
+       
+        }
+    </style>
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $('#btnShow').click(function () {
+                $('#dv1').show(1000);
+            });
+
+            $('#btnHide').click(function () {
+                $('#dv1').hide(1000);
+            });
+            $('#btnSlideUp').click(function () {
+                $('#dv1').slideUp(1000);
+            });
+            $('#btnSlideDown').click(function () {
+                $('#dv1').slideDown(1000);
+            });
+            $('#btnFadeIn').click(function () {
+                $('#dv1').fadeIn(1000);
+                //淡入到指定透明度
+                //$('#dv1').fadeTo(1000,0.6);
+            });
+            $('#btnFadeOut').click(function () {
+                $('#dv1').fadeOut(1000);
+            });
+            $('#btnToggle').click(function () {
+                //三种方式，交替显示和隐藏
+                $('#dv1').fadeToggle(1000);
+                $('#dv1').toggle(1000);
+                $('#dv1').slideToggle(1000);
+            });
+
+        
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btnShow" name="name" value="显示" style="margin-left:20%" />
+    <input type="button" id="btnHide" name="name" value="隐藏" />
+    <input type="button" id="btnSlideDown" name="name" value="层叠展开" />
+    <input type="button" id="btnSlideUp" name="name" value="层叠关闭" />
+    <input type="button" id="btnFadeIn" name="name" value="淡入" />
+    <input type="button" id="btnFadeOut" name="name" value="淡出" />
+    <input type="button" id="btnToggle" name="name" value="交替显示" />
+
+    <div id="dv1">
+
+    </div>
+
+</body>
+</html>
