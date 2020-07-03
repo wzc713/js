@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script src="../script/jquery.cookie.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                var user_name = $('#userName').val();
+
+                //当写入cookie的时候一定要注意如果不设置有效期，那么cookie是进程内coolie
+                   
+                //当浏览器关闭的时候就失效了，只保存在内存中,secure区分http和https
+                $.cookie('uname', user_name, { expires:1, path: '/', secure: false });
+                alert('设置成功');
+            });
+            $('#btn2').click(function () {
+                $.cookie('uname', '');
+                alert('删除成功！');
+            });
+            if ($.cookie('uname')) {
+                $('#pm').text('欢迎，' + $.cookie('uname') + '!');
+            } else {
+                $('#pm').text('欢迎，游客！');
+            }
+        });
+    </script>
+    <style type="text/css">
+        p {
+        border:1px solid blue;
+        }
+    </style>
+</head>
+<body>
+请输入姓名：<input type="text" id="userName" name="name" value="" />
+      <input type="button" id="btn1" name="name" value="记住姓名" />
+      <input type="button" id="btn2" name="name" value="删除姓名" />
+      <p id="pm">欢迎，游客！</p>
+</body>
+</html>

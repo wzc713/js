@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../script/jquery-3.5.1.js"></script>
+    <style type="text/css">
+        hr {
+            position: absolute;
+            background-color: burlywood;
+            top: 600px;
+            width: 100%;
+            border:none;
+        }
+
+        div{
+            width:16px;
+            height:16px;
+            background-color:blueviolet;
+            position:absolute;
+            top:592px;
+            left:10px;
+        }
+        #btn1 {
+        top:10%;
+        left:36%;
+        position:absolute;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $('#dv1').animate({ 'width': '36px', 'height': '36px', 'top': '572px' }, 1000)
+                    .animate({ 'left': '210px', 'top': '372px' }, 1000)
+                    .animate({ 'left': '410px', 'top': '572px' }, 1000)
+                    .animate({ 'left': '610px', 'top': '372px' }, 1000)
+                    .animate({ 'left': '810px', 'top': '572px' }, 1000)
+                    .animate({ 'left': '1010px', 'top': '372px' }, 1000)
+                    .animate({ 'left': '1210px', 'top': '572px' }, 1000)
+                    .animate({ 'left': '1220px', 'top': '500px' }, 100)
+                    .animate({ 'left': '1230px', 'top': '572px' }, 100)
+                    .animate({ 'left': '1240px', 'top': '500px' }, 100)
+                    .animate({ 'left': '1250px', 'top': '572px' }, 100)
+                    .animate({ 'left': '1260px', 'top': '500px' }, 100)
+                    .animate({ 'left': '1270px', 'top': '572px' }, 100)
+                ;
+            });
+            var y = $('#btn1').offset().top;
+            var x = $('#btn1').offset().left + ($('#btn1').width()*1.5);
+            //alert(x+','+y);
+
+            
+            $('#btn2').css({ 'position': 'absolute', 'left': x, 'top': y });
+            $('#btn2').click(function () {
+                //$(':animated').stop();//停止执行当前动画
+                //$(':animated').stop(true);//停止当前动画，并清除后续动画
+               $(':animated').stop(true,true);//执行到当前动画结束，清除后续动画
+            });
+        });
+    </script>
+</head>
+<body>
+    <hr id="hr1" size="16" noshade="noshade" />
+    <div id="dv1"></div>
+    <input type="button" id="btn1" name="name" value="开始动画" />
+    <input type="button" id="btn2" name="name" value="停止动画" />
+</body>
+</html>

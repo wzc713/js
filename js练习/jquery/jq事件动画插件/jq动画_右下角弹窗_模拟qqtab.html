@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../script/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+
+
+            $('#qqGroup li p').click(function () {
+                $(this).next('ul').slideToggle(200);
+                
+
+
+            });
+            //两秒钟后从底部展开
+            var val = setInterval(function () {
+                $('#img1').css({ 'right': '0', 'bottom': '0' }).slideDown(1000);
+                clearInterval(val);
+            }, 2000)
+
+
+
+
+        });
+    </script>
+    <style type="text/css">
+        #img1 {
+            display: none;
+            /*绝对定位    */
+            position: absolute;
+            
+        }
+
+        #qqTab {
+            width: 200px;
+            height: 600px;
+            border: 1px solid blue;
+            background-color: darkseagreen;
+            margin-left: 30%;
+            margin-top: 6%;
+        }
+        #qqTab ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+
+        }
+
+        #qqGroup ul li {
+            background-color: burlywood;
+            margin-top: 2px;
+            margin-bottom:2px;
+            
+        }
+        #qqGroup li ul{
+            display:none;
+        }
+        p {
+            margin: 0;
+            margin-bottom: 2px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        p,li{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="img1" src="/img/tly.jpg" alt="Alternate Text" />
+    <div id="qqTab">
+        <ul id="qqGroup">
+            <li>
+                <p>小学同学</p>
+                <ul>
+                    <li>佟丽娅</li>
+                    <li>屈茜</li>
+                    <li>西彬</li>
+                </ul>
+            </li>
+
+            <li>
+                <p>中学同学</p>
+                <ul>
+                    <li>佟丽娅</li>
+                    <li>屈茜</li>
+                    <li>西彬</li>
+                </ul>
+            </li>
+            <li>
+                <p>大学同学</p>
+                <ul>
+                    <li>佟丽娅</li>
+                    <li>屈茜</li>
+                    <li>西彬</li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+</body>
+</html>
