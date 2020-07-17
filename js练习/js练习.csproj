@@ -79,6 +79,7 @@
     <Content Include="jquery\jq事件动画插件\jq动画_右下角弹窗_模拟qqtab.html" />
     <Content Include="jquery\jq事件动画插件\jq动画_显示隐藏淡入淡出.html" />
     <Content Include="jquery\jq事件动画插件\点击弹出层提示.html" />
+    <Content Include="jquery\jq事件动画插件\编写jq插件.html" />
     <Content Include="jquery\jq删除节点 select相互移动.html" />
     <Content Include="jquery\jq加法计算器  5秒阅读协议.html" />
     <Content Include="jquery\jq动态创建元素和表格  无刷新提交信息.html" />
@@ -90,6 +91,7 @@
     <Content Include="jquery\script\jquery-3.5.1.min.js" />
     <Content Include="jquery\jquery遍历.html" />
     <Content Include="jquery\script\jquery.cookie.js" />
+    <Content Include="jquery\script\jquery.tablestytlet.js" />
     <Content Include="jquery\script\选择器，过滤器，属性过滤器，表单过滤器.js" />
     <Content Include="jquery\ul节点互相转移.html" />
     <Content Include="jquery\单选复选的批量赋值问题.html" />
